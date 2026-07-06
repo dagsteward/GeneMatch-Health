@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
@@ -14,17 +15,30 @@ export default function AboutPage() {
   return (
     <>
       <Section className="bg-card">
-        <Reveal>
-          <Eyebrow>About Us</Eyebrow>
-          <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
-            {site.name}
-          </h1>
-          <p className="max-w-3xl text-lg text-muted-foreground">
-            {site.name} is a {site.legalForm.toLowerCase()}, founded in {site.founded} to bring
-            AI-powered health education, preventive healthcare and community engagement to
-            individuals and families across the UK.
-          </p>
-        </Reveal>
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+          <Reveal>
+            <Eyebrow>About Us</Eyebrow>
+            <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
+              {site.name}
+            </h1>
+            <p className="max-w-3xl text-lg text-muted-foreground">
+              {site.name} is a {site.legalForm.toLowerCase()}, founded in {site.founded} to bring
+              AI-powered health education, preventive healthcare and community engagement to
+              individuals and families across the UK.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+              <Image
+                src="/images/family-wellbeing.jpg"
+                alt="A family enjoying time together outdoors"
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       <Section className="bg-muted/40">

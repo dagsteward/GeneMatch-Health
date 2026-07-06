@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ExternalLink, GraduationCap, HeartPulse, Sparkles, UsersRound } from "lucide-react";
@@ -52,28 +53,43 @@ export default async function ProgrammeDetailPage({
   return (
     <>
       <Section className="bg-card">
-        <Reveal>
-          <Eyebrow>{programme.platformUrl ? "Flagship Programme · Live" : "Flagship Programme"}</Eyebrow>
-          <div className="mb-6 flex items-center gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white">
-              <Icon className="h-7 w-7" aria-hidden="true" />
+        <div className={programme.image ? "grid grid-cols-1 items-center gap-10 lg:grid-cols-2" : ""}>
+          <Reveal>
+            <Eyebrow>{programme.platformUrl ? "Flagship Programme · Live" : "Flagship Programme"}</Eyebrow>
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-white">
+                <Icon className="h-7 w-7" aria-hidden="true" />
+              </div>
+              <h1 className="font-heading text-3xl font-semibold text-primary md:text-5xl">
+                {programme.name}
+              </h1>
             </div>
-            <h1 className="font-heading text-3xl font-semibold text-primary md:text-5xl">
-              {programme.name}
-            </h1>
-          </div>
-          <p className="mb-8 max-w-3xl text-lg text-muted-foreground">{programme.summary}</p>
-          {programme.platformUrl && (
-            <a
-              href={programme.platformUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground shadow-lg transition-transform active:scale-95"
-            >
-              Launch GeneMatch AI <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            </a>
+            <p className="mb-8 max-w-3xl text-lg text-muted-foreground">{programme.summary}</p>
+            {programme.platformUrl && (
+              <a
+                href={programme.platformUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground shadow-lg transition-transform active:scale-95"
+              >
+                Launch GeneMatch AI <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              </a>
+            )}
+          </Reveal>
+          {programme.image && (
+            <Reveal delay={0.1}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+                <Image
+                  src={programme.image.src}
+                  alt={programme.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
           )}
-        </Reveal>
+        </div>
       </Section>
 
       <Section className="bg-muted/40">

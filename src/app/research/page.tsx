@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
@@ -15,17 +16,30 @@ export default function ResearchPage() {
   return (
     <>
       <Section className="bg-card">
-        <Reveal>
-          <Eyebrow>Innovation Lab</Eyebrow>
-          <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
-            Advancing Digital Public Health
-          </h1>
-          <p className="max-w-3xl text-lg text-muted-foreground">
-            We&apos;re building the research foundations to bridge genomic and health science
-            with frontline, community-led care — through ethical, evidence-led digital
-            innovation.
-          </p>
-        </Reveal>
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+          <Reveal>
+            <Eyebrow>Innovation Lab</Eyebrow>
+            <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
+              Advancing Digital Public Health
+            </h1>
+            <p className="max-w-3xl text-lg text-muted-foreground">
+              We&apos;re building the research foundations to bridge genomic and health science
+              with frontline, community-led care — through ethical, evidence-led digital
+              innovation.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+              <Image
+                src="/images/research-lab.jpg"
+                alt="A researcher preparing lab samples for genomic analysis"
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       <Section className="bg-brand text-brand-foreground">

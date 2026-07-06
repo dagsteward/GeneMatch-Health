@@ -65,6 +65,7 @@ export type Programme = {
   icon: "sparkles" | "heart-pulse" | "users-round" | "graduation-cap";
   summary: string;
   platformUrl?: string;
+  image?: { src: string; alt: string };
   features: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
 };
@@ -77,6 +78,10 @@ export const programmes: Programme[] = [
       "Our live AI-powered health support platform for risk awareness, compatibility insights and preventive recommendations.",
     icon: "sparkles",
     platformUrl: site.aiPlatformUrl,
+    image: {
+      src: "/images/health-fitness.jpg",
+      alt: "A person out running while tracking their health data on a wearable device",
+    },
     summary:
       "GeneMatch AI™ is our first flagship programme, live today — an AI-powered health education and preventive health platform translating health literacy resources, risk-awareness tools and personalised educational content into plain, actionable guidance for individuals and families.",
     features: [
@@ -158,6 +163,10 @@ export const programmes: Programme[] = [
     shortDescription:
       "Helping families manage health proactively with family history tools, preventive guidance and wellness resources.",
     icon: "users-round",
+    image: {
+      src: "/images/doctor-patient.jpg",
+      alt: "Two clinicians reviewing patient scan results together",
+    },
     summary:
       "GeneMatch Family Health™ helps families manage health proactively through family health history tools, preventive healthcare guidance, wellness programmes, health tracking resources and family health education.",
     features: [

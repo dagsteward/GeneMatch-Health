@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Users, GraduationCap, HeartHandshake } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
@@ -18,17 +19,30 @@ export default function CommunityImpactPage() {
   return (
     <>
       <Section className="bg-card">
-        <Reveal>
-          <Eyebrow>Community Impact</Eyebrow>
-          <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
-            Where We&apos;re Headed
-          </h1>
-          <p className="max-w-3xl text-lg text-muted-foreground">
-            {site.name} was founded in {site.founded}. We don&apos;t have a track record to
-            report yet — what follows are the honest, forward-looking targets guiding our
-            roadmap, not results we&apos;ve already achieved.
-          </p>
-        </Reveal>
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+          <Reveal>
+            <Eyebrow>Community Impact</Eyebrow>
+            <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
+              Where We&apos;re Headed
+            </h1>
+            <p className="max-w-3xl text-lg text-muted-foreground">
+              {site.name} was founded in {site.founded}. We don&apos;t have a track record to
+              report yet — what follows are the honest, forward-looking targets guiding our
+              roadmap, not results we&apos;ve already achieved.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
+              <Image
+                src="/images/community-workshop.jpg"
+                alt="A group of people in an engaged community discussion"
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       <Section className="bg-brand text-brand-foreground">
