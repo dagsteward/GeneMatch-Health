@@ -4,6 +4,7 @@ import { Section, Eyebrow } from "@/components/Section";
 import { ProgrammeCard } from "@/components/ProgrammeCard";
 import { DnaHelixBackground } from "@/components/DnaHelixBackground";
 import { Reveal } from "@/components/Reveal";
+import { CountUp } from "@/components/CountUp";
 import { programmes, site, targets, targetPartners } from "@/lib/site";
 
 const missionPillars = [
@@ -57,7 +58,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <div className="text-center">
             <Eyebrow>Our Mission</Eyebrow>
@@ -98,7 +99,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="bg-primary text-primary-foreground">
+      <Section className="bg-brand text-brand-foreground">
         <Reveal>
           <div className="mb-12 text-center">
             <Eyebrow className="bg-white/10 text-white">Our Founding Goals</Eyebrow>
@@ -113,33 +114,37 @@ export default function Home() {
         </Reveal>
         <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-4">
           <div>
-            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
-              {targets.year1.users}
-            </div>
+            <CountUp
+              value={targets.year1.users}
+              className="mb-2 block font-heading text-4xl font-semibold md:text-5xl"
+            />
             <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
               {targets.year1.label}: Platform Users
             </div>
           </div>
           <div>
-            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
-              {targets.year1.workshops}
-            </div>
+            <CountUp
+              value={targets.year1.workshops}
+              className="mb-2 block font-heading text-4xl font-semibold md:text-5xl"
+            />
             <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
               {targets.year1.label}: Workshops
             </div>
           </div>
           <div>
-            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
-              {targets.year1.beneficiaries}
-            </div>
+            <CountUp
+              value={targets.year1.beneficiaries}
+              className="mb-2 block font-heading text-4xl font-semibold md:text-5xl"
+            />
             <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
               {targets.year1.label}: Beneficiaries
             </div>
           </div>
           <div>
-            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
-              {targets.year5.users}
-            </div>
+            <CountUp
+              value={targets.year5.users}
+              className="mb-2 block font-heading text-4xl font-semibold md:text-5xl"
+            />
             <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
               {targets.year5.label}: Platform Users
             </div>
@@ -147,7 +152,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <div className="text-center">
             <Eyebrow>Who We&apos;re Building With</Eyebrow>

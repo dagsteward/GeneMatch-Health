@@ -227,6 +227,12 @@ export const targets = {
     workshops: "20",
     beneficiaries: "500",
   },
+  year3: {
+    label: "Year 3 Target",
+    users: "50,000",
+    workshops: "100",
+    beneficiaries: "25,000",
+  },
   year5: {
     label: "Year 5 Target",
     users: "250,000",
@@ -322,10 +328,43 @@ export const clinicalCommitments = [
   },
 ];
 
+export const fundingAvenues = [
+  {
+    title: "Corporate Partnerships",
+    description:
+      "CSR and innovation partnerships with corporates aligned to ethical AI, digital inclusion and preventive health — from joint pilots to in-kind technical support.",
+  },
+  {
+    title: "Research Funding & Grants",
+    description:
+      "Grant funding from bodies such as Innovate UK, the National Lottery Community Fund, Health Innovation Networks and NHS Innovation Programmes, alongside university research grants.",
+  },
+  {
+    title: "Community Sponsorship",
+    description:
+      "Sponsorship of our GeneMatch Education™ workshops and community outreach — putting your organisation's name behind health literacy where it's needed most.",
+  },
+  {
+    title: "Volunteer & In-Kind Support",
+    description:
+      "Time, expertise and in-kind contributions from volunteers, advisors and organisations — see our Careers & Volunteering page to get involved directly.",
+  },
+];
+
+export const revenueModel = [
+  { stream: "Grants", description: "Applications to public, charitable and innovation funding programmes." },
+  { stream: "Educational Services", description: "Workshops, training programmes and health education events." },
+  { stream: "Partnerships", description: "Collaborations with healthcare organisations and universities." },
+  { stream: "Sponsorship", description: "Corporate and institutional sponsorship opportunities." },
+  { stream: "Technology Licensing", description: "Licensing selected digital solutions to approved partners." },
+  { stream: "Consultancy", description: "Health innovation, governance and digital transformation consulting." },
+];
+
 export const nav = [
   { href: "/about", label: "About" },
   { href: "/programmes", label: "Programmes" },
   { href: "/research", label: "Research" },
+  { href: "/community-impact", label: "Impact" },
   { href: "/partnerships", label: "Partnerships" },
   { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
@@ -334,8 +373,15 @@ export const nav = [
 export const footerLinks = {
   organisation: [
     { href: "/about", label: "About Us" },
+    { href: "/programmes", label: "Programmes" },
     { href: "/research", label: "Research & Innovation" },
+    { href: "/community-impact", label: "Community Impact" },
     { href: "/partnerships", label: "Partnerships" },
+  ],
+  resources: [
+    { href: "/funding", label: "Funding & Support" },
+    { href: "/news", label: "News" },
+    { href: "/resources", label: "Resources" },
     { href: "/careers", label: "Careers & Volunteering" },
   ],
   legal: [

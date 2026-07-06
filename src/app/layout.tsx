@@ -3,6 +3,8 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { FloatingAiButton } from "@/components/FloatingAiButton";
 import { site } from "@/lib/site";
 
 const poppins = Poppins({
@@ -44,11 +46,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${poppins.variable} ${inter.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col font-sans">
-        <Header />
-        <main className="flex-1 pt-20">{children}</main>
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <Header />
+          <main className="flex-1 pt-20">{children}</main>
+          <Footer />
+          <FloatingAiButton />
+        </ThemeProvider>
       </body>
     </html>
   );

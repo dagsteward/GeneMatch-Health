@@ -40,7 +40,7 @@ export function NewsletterForm() {
         type="email"
         required
         placeholder="Email address"
-        className="w-full rounded-l-xl border border-border bg-white px-4 py-2.5 text-sm text-foreground focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
+        className="w-full rounded-l-xl border border-border bg-card px-4 py-2.5 text-sm text-foreground focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
       />
       <button
         type="submit"

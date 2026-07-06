@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <Eyebrow>About Us</Eyebrow>
           <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
@@ -46,7 +46,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <h2 className="mb-12 text-center font-heading text-2xl font-semibold text-primary md:text-3xl">
             Our Core Values

@@ -19,7 +19,7 @@ const departments = [
 
 export default function ContactPage() {
   return (
-    <Section className="bg-white">
+    <Section className="bg-card">
       <Reveal>
         <Eyebrow>Contact</Eyebrow>
         <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">

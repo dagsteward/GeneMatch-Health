@@ -6,12 +6,13 @@ import { ExternalLink, Menu, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { nav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border/60 bg-white/80 shadow-sm backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-border/60 bg-background/80 shadow-sm backdrop-blur-md">
       <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 md:px-10">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <Logo className="h-8 w-auto" />
@@ -30,6 +31,7 @@ export function Header() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
           <a
             href={site.aiPlatformUrl}
             target="_blank"
@@ -46,20 +48,23 @@ export function Header() {
           </Link>
         </div>
 
-        <button
-          type="button"
-          className="p-2 text-primary md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="p-2 text-primary"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       <div
         className={cn(
-          "fixed inset-y-0 left-0 z-[60] h-full w-72 rounded-r-2xl bg-primary shadow-xl transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-y-0 left-0 z-[60] h-full w-72 rounded-r-2xl bg-sidebar shadow-xl transition-transform duration-300 ease-in-out md:hidden",
           open ? "translate-x-0" : "-translate-x-full"
         )}
       >

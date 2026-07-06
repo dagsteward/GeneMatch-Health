@@ -5,9 +5,9 @@ import { NewsletterForm } from "@/components/layout/NewsletterForm";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-white py-12">
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-6 md:grid-cols-4 md:px-10">
-        <div>
+    <footer className="border-t border-border bg-background py-12">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-6 sm:grid-cols-2 md:px-10 lg:grid-cols-5">
+        <div className="sm:col-span-2 lg:col-span-1">
           <Logo className="mb-6 h-7 w-auto" />
           <p className="mb-4 text-sm text-muted-foreground">{site.tagline}</p>
           <p className="text-xs text-muted-foreground">{site.registrationStatus}</p>
@@ -19,6 +19,24 @@ export function Footer() {
           </h4>
           <ul className="space-y-3">
             {footerLinks.organisation.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-muted-foreground underline decoration-transparent transition-all hover:text-primary hover:decoration-primary"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-6 text-sm font-semibold uppercase tracking-wide text-primary">
+            Resources
+          </h4>
+          <ul className="space-y-3">
+            {footerLinks.resources.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

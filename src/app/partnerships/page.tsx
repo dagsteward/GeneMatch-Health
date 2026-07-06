@@ -38,7 +38,7 @@ const categories = [
 export default function PartnershipsPage() {
   return (
     <>
-      <section className="bg-primary py-24 text-center text-primary-foreground">
+      <section className="bg-brand py-24 text-center text-brand-foreground">
         <div className="mx-auto max-w-3xl px-6">
           <Reveal>
             <h1 className="mb-6 font-heading text-3xl font-semibold md:text-5xl">
@@ -52,7 +52,7 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <h2 className="mb-4 font-heading text-2xl font-semibold text-primary md:text-3xl">
             Who We Want to Work With
@@ -94,7 +94,7 @@ export default function PartnershipsPage() {
             const Icon = benefitIcons[i % benefitIcons.length];
             return (
               <Reveal key={benefit.title} delay={i * 0.08}>
-                <div className="h-full rounded-2xl bg-white p-8 shadow-sm">
+                <div className="h-full rounded-2xl bg-card p-8 shadow-sm">
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
@@ -107,7 +107,7 @@ export default function PartnershipsPage() {
         </div>
       </Section>
 
-      <Section id="partner-form" className="bg-white">
+      <Section id="partner-form" className="bg-card">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <Reveal>
             <div>

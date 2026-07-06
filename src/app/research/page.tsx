@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <>
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <Eyebrow>Innovation Lab</Eyebrow>
           <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
@@ -28,7 +28,7 @@ export default function ResearchPage() {
         </Reveal>
       </Section>
 
-      <Section className="bg-primary text-primary-foreground">
+      <Section className="bg-brand text-brand-foreground">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {clinicalCommitments.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08}>
@@ -41,7 +41,7 @@ export default function ResearchPage() {
         </div>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <Eyebrow>Academic Ecosystem</Eyebrow>
           <h2 className="mb-4 font-heading text-2xl font-semibold text-primary md:text-3xl">
@@ -108,7 +108,7 @@ export default function ResearchPage() {
         </Reveal>
       </Section>
 
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <h2 className="mb-4 font-heading text-2xl font-semibold text-primary md:text-3xl">
             Our Three-Year Roadmap
@@ -139,7 +139,7 @@ export default function ResearchPage() {
         </div>
       </Section>
 
-      <Section className="bg-primary text-primary-foreground">
+      <Section className="bg-brand text-brand-foreground">
         <Reveal>
           <div className="text-center">
             <h2 className="mb-4 font-heading text-2xl font-semibold md:text-3xl">
@@ -151,7 +151,7 @@ export default function ResearchPage() {
             </p>
             <Link
               href="/partnerships"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-semibold text-primary transition-transform active:scale-95"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-sm font-semibold text-brand transition-transform active:scale-95"
             >
               Start a Conversation <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>

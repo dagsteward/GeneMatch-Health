@@ -37,7 +37,7 @@ export function PartnershipForm() {
 
   return (
     <form
-      className="space-y-5 rounded-3xl bg-white p-8 shadow-xl md:p-10"
+      className="space-y-5 rounded-3xl bg-card p-8 shadow-xl md:p-10"
       onSubmit={(e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;

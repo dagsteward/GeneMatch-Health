@@ -23,7 +23,7 @@ const volunteerAreas = [
 export default function CareersPage() {
   return (
     <>
-      <Section className="bg-white">
+      <Section className="bg-card">
         <Reveal>
           <Eyebrow>Join the Mission</Eyebrow>
           <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
@@ -43,7 +43,7 @@ export default function CareersPage() {
           <div className="space-y-6">
             {volunteerAreas.map((area, i) => (
               <Reveal key={area.title} delay={i * 0.08}>
-                <div className="rounded-2xl bg-white p-6 shadow-sm">
+                <div className="rounded-2xl bg-card p-6 shadow-sm">
                   <h3 className="mb-2 font-heading font-semibold text-primary">{area.title}</h3>
                   <p className="text-sm text-muted-foreground">{area.description}</p>
                 </div>

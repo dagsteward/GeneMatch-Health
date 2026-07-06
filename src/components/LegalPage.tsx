@@ -10,7 +10,7 @@ export function LegalPage({
   children: React.ReactNode;
 }) {
   return (
-    <Section className="bg-white">
+    <Section className="bg-card">
       <div className="mx-auto max-w-3xl">
         <h1 className="mb-2 font-heading text-3xl font-semibold text-primary md:text-4xl">
           {title}
