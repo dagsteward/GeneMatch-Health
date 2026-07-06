@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { Building2, Hospital, Landmark, HeartHandshake } from "lucide-react";
+import { Award, Building2, FlaskConical, Hospital, Landmark, HeartHandshake, Rocket, ShieldCheck } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { PartnershipForm } from "@/components/forms/PartnershipForm";
-import { fundingTiers, site } from "@/lib/site";
+import { partnerBenefits, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Partnerships",
   description: `Become a founding partner of ${site.name} — NHS, local authorities, universities, corporate and charity partners welcome.`,
 };
+
+const benefitIcons = [Award, Rocket, FlaskConical, ShieldCheck];
 
 const categories = [
   {
@@ -75,31 +77,33 @@ export default function PartnershipsPage() {
         </div>
       </Section>
 
-      <Section id="funding" className="bg-muted/40">
+      <Section id="why-partner" className="bg-muted/40">
         <Reveal>
-          <Eyebrow>Funding Ask</Eyebrow>
+          <Eyebrow>Why Partner With Us</Eyebrow>
           <h2 className="mb-4 font-heading text-2xl font-semibold text-primary md:text-3xl">
-            Empowering Public Health Innovation
+            Built for Genuine Collaboration
           </h2>
           <p className="mb-12 max-w-2xl text-muted-foreground">
-            As a Community Interest Company, every donation and grant is reinvested into our
-            community benefit objectives under our statutory asset lock.
+            {site.name} is a registered Community Interest Company (No. {site.companyNumber}).
+            Every partnership furthers our statutory, asset-locked community benefit objectives —
+            here&apos;s what partnering with us looks like in practice.
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {fundingTiers.map((tier, i) => (
-            <Reveal key={tier.stage} delay={i * 0.08}>
-              <div className="rounded-2xl bg-white p-8 shadow-sm">
-                <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-secondary">
-                  {tier.stage}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {partnerBenefits.map((benefit, i) => {
+            const Icon = benefitIcons[i % benefitIcons.length];
+            return (
+              <Reveal key={benefit.title} delay={i * 0.08}>
+                <div className="h-full rounded-2xl bg-white p-8 shadow-sm">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <h3 className="mb-2 font-heading font-semibold text-primary">{benefit.title}</h3>
+                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </div>
-                <div className="mb-4 font-heading text-3xl font-semibold text-primary">
-                  {tier.amount}
-                </div>
-                <p className="text-sm text-muted-foreground">{tier.use}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 

@@ -9,8 +9,8 @@ export default function PrivacyPage() {
     <LegalPage title="Privacy Policy" updated="July 2026">
       <h2>Who we are</h2>
       <p>
-        {site.name} is a {site.legalForm.toLowerCase()}. {site.registrationStatus} This policy
-        explains how we collect, use and protect information submitted through this website.
+        {site.registrationStatus} This policy explains how we collect, use and protect
+        information submitted through this website.
       </p>
 
       <h2>Information we collect</h2>

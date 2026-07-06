@@ -65,7 +65,8 @@ export function Footer() {
 
       <div className="mx-auto mt-12 max-w-[1280px] border-t border-border px-6 pt-8 md:px-10">
         <p className="text-center text-xs text-muted-foreground md:text-left">
-          © {site.founded} {site.name}. Registered Community Interest Company.
+          © {site.founded} {site.name}. Registered Community Interest Company, England &amp;
+          Wales. Company No. {site.companyNumber}.
         </p>
       </div>
     </footer>

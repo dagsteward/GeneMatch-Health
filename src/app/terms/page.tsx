@@ -29,16 +29,16 @@ export default function TermsPage() {
 
       <h2>Community Interest Company status</h2>
       <p>
-        {site.name} operates under the statutory Community Interest Company asset lock. Any
-        surplus is reinvested in furthering our community benefit objectives, in accordance
-        with Community Interest Company regulations.
+        {site.registrationStatus} {site.name} operates under the statutory Community Interest
+        Company asset lock. Any surplus is reinvested in furthering our community benefit
+        objectives, in accordance with Community Interest Company regulations.
       </p>
 
       <h2>Limitation of liability</h2>
       <p>
         We make reasonable efforts to keep information on this site accurate, but we make no
         warranties about its completeness or accuracy, particularly given {site.name} is a
-        newly founded organisation whose programmes and platforms are still in development.
+        newly founded organisation whose programmes continue to develop.
       </p>
 
       <h2>Contact</h2>

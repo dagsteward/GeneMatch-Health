@@ -14,8 +14,10 @@ export const site = {
     "To improve health and wellbeing through innovative technology, education, research, and community engagement that empowers individuals and families to make informed health decisions.",
   legalForm: "Community Interest Company Limited by Guarantee",
   founded: "2026",
+  companyNumber: "17297892",
+  incorporatedDate: "24 June 2026",
   registrationStatus:
-    "GeneMatch Health CIC is in the process of registering with Companies House and the CIC Regulator.",
+    "GeneMatch Health CIC is registered with Companies House as a Community Interest Company (Company No. 17297892), incorporated on 24 June 2026.",
   domain: "genematchhealth.org",
   aiPlatformUrl: "https://gene-match.vercel.app",
   emails: {
@@ -240,21 +242,26 @@ export const targets = {
   },
 };
 
-export const fundingTiers = [
+export const partnerBenefits = [
   {
-    stage: "Seed",
-    amount: "£50,000",
-    use: "Company setup, platform MVP, branding, legal and compliance foundations.",
+    title: "Founding Recognition",
+    description:
+      "Be recognised as one of our founding partners in our public materials and reporting as GeneMatch Health CIC grows.",
   },
   {
-    stage: "Growth",
-    amount: "£250,000",
-    use: "Platform development, founding staff, marketing, and our first NHS pilot.",
+    title: "Early Access & Co-Design",
+    description:
+      "Shape GeneMatch AI™ and our other programmes before they reach the public, with direct input into features and pilots.",
   },
   {
-    stage: "Scale",
-    amount: "£1,000,000+",
-    use: "National expansion, research partnerships, and clinical integration.",
+    title: "Shared Research & Insights",
+    description:
+      "Get early access to findings from our research partnerships and pilots, including our proposed Greater Manchester pilot.",
+  },
+  {
+    title: "A Publicly Accountable Mission",
+    description:
+      "As a registered, asset-locked Community Interest Company, every partnership with us furthers a transparent, community-benefit purpose — not private profit.",
   },
 ];
 
