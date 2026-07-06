@@ -1,65 +1,203 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, BookOpenCheck, HeartHandshake, ShieldCheck } from "lucide-react";
+import { Section, Eyebrow } from "@/components/Section";
+import { ProgrammeCard } from "@/components/ProgrammeCard";
+import { DnaHelixBackground } from "@/components/DnaHelixBackground";
+import { Reveal } from "@/components/Reveal";
+import { programmes, site, targets, targetPartners } from "@/lib/site";
+
+const missionPillars = [
+  {
+    icon: ShieldCheck,
+    title: "Responsible AI",
+    description:
+      "Transparent, ethically-governed AI tools designed to support — never replace — professional medical advice.",
+  },
+  {
+    icon: BookOpenCheck,
+    title: "Health Literacy for All",
+    description:
+      "Making health knowledge understandable and accessible, especially for communities facing health inequalities.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Community-Led Research",
+    description:
+      "Building research and delivery partnerships with universities, the NHS and community organisations from day one.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="relative flex min-h-[85vh] items-center overflow-hidden bg-background">
+        <DnaHelixBackground opacity={0.35} />
+        <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-6 py-20 md:px-10 lg:grid-cols-12">
+          <div className="lg:col-span-8">
+            <Eyebrow>Founded 2026 · Community Interest Company</Eyebrow>
+            <h1 className="mb-6 max-w-3xl font-heading text-4xl font-semibold leading-tight text-primary md:text-6xl">
+              {site.tagline}
+            </h1>
+            <p className="mb-10 max-w-2xl text-lg text-muted-foreground">{site.mission}</p>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/programmes"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-lg transition-transform active:scale-95"
+              >
+                Explore Our Programmes <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/partnerships"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-8 py-4 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+              >
+                Partner With Us
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <Section className="bg-white">
+        <Reveal>
+          <div className="text-center">
+            <Eyebrow>Our Mission</Eyebrow>
+            <h2 className="mb-12 font-heading text-2xl font-semibold text-primary md:text-3xl">
+              Health Literacy through AI, Research &amp; Partnerships
+            </h2>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+          {missionPillars.map((pillar, i) => (
+            <Reveal key={pillar.title} delay={i * 0.1}>
+              <div className="flex flex-col items-center text-center">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <pillar.icon className="h-8 w-8" aria-hidden="true" />
+                </div>
+                <h3 className="mb-4 font-heading text-lg font-semibold text-primary">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">{pillar.description}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
-      </main>
-    </div>
+      </Section>
+
+      <Section>
+        <Reveal>
+          <h2 className="mb-12 font-heading text-2xl font-semibold text-primary md:text-3xl">
+            Core Programmes
+          </h2>
+        </Reveal>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {programmes.map((programme, i) => (
+            <Reveal key={programme.slug} delay={i * 0.08}>
+              <ProgrammeCard programme={programme} index={i} />
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-primary text-primary-foreground">
+        <Reveal>
+          <div className="mb-12 text-center">
+            <Eyebrow className="bg-white/10 text-white">Our Founding Goals</Eyebrow>
+            <h2 className="font-heading text-2xl font-semibold md:text-3xl">
+              Where we&apos;re headed — not where we&apos;ve been
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-white/70">
+              GeneMatch Health CIC was founded in 2026. These are the targets guiding our
+              roadmap, not results we&apos;ve already achieved.
+            </p>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-4">
+          <div>
+            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
+              {targets.year1.users}
+            </div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
+              {targets.year1.label}: Platform Users
+            </div>
+          </div>
+          <div>
+            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
+              {targets.year1.workshops}
+            </div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
+              {targets.year1.label}: Workshops
+            </div>
+          </div>
+          <div>
+            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
+              {targets.year1.beneficiaries}
+            </div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
+              {targets.year1.label}: Beneficiaries
+            </div>
+          </div>
+          <div>
+            <div className="mb-2 font-heading text-4xl font-semibold md:text-5xl">
+              {targets.year5.users}
+            </div>
+            <div className="text-xs font-semibold uppercase tracking-wider text-white/60">
+              {targets.year5.label}: Platform Users
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="bg-white">
+        <Reveal>
+          <div className="text-center">
+            <Eyebrow>Who We&apos;re Building With</Eyebrow>
+            <h2 className="mb-4 font-heading text-2xl font-semibold text-primary md:text-3xl">
+              Founding partnerships, not a finished network
+            </h2>
+            <p className="mx-auto mb-12 max-w-2xl text-sm text-muted-foreground">
+              As a newly formed CIC, we&apos;re actively building relationships across the
+              health, research and innovation sectors below — we don&apos;t yet have signed
+              partnerships to announce.
+            </p>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <Reveal>
+            <div className="rounded-2xl border border-border p-8">
+              <h3 className="mb-4 font-heading text-sm font-semibold uppercase tracking-wide text-secondary">
+                Target Sectors
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {targetPartners.sectors.map((sector) => (
+                  <li key={sector}>{sector}</li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="rounded-2xl border border-border p-8">
+              <h3 className="mb-4 font-heading text-sm font-semibold uppercase tracking-wide text-secondary">
+                Target Academic Partners
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {targetPartners.universities.map((uni) => (
+                  <li key={uni}>{uni}</li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal>
+          <div className="mt-12 text-center">
+            <Link
+              href="/partnerships"
+              className="inline-flex items-center gap-2 rounded-xl bg-secondary px-8 py-4 text-sm font-semibold text-secondary-foreground transition-transform active:scale-95"
+            >
+              Become a Founding Partner <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </Reveal>
+      </Section>
+    </>
   );
 }
