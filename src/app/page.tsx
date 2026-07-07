@@ -36,7 +36,7 @@ export default function Home() {
         <DnaHelixBackground opacity={0.2} />
         <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 px-6 py-20 md:px-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <Eyebrow>Founded 2026 · Community Interest Company</Eyebrow>
+            <Eyebrow>Community Interest Company</Eyebrow>
             <h1 className="mb-6 max-w-3xl font-heading text-4xl font-semibold leading-tight text-primary md:text-6xl">
               {site.tagline}
             </h1>
