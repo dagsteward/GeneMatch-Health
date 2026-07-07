@@ -11,6 +11,15 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Our Programmes",
   description: `The four founding programmes of ${site.name}: GeneMatch AI™, Fertility™, Family Health™ and Education™.`,
+  keywords: [
+    "GeneMatch AI programme",
+    "GeneMatch Fertility",
+    "GeneMatch Family Health",
+    "GeneMatch Education",
+    "health literacy programmes UK",
+    ...site.keywords,
+  ],
+  alternates: { canonical: "/programmes" },
 };
 
 export default async function ProgrammesPage() {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck, HeartHandshake, ShieldCheck } from "lucide-react";
@@ -6,11 +7,18 @@ import { ProgrammeCard } from "@/components/ProgrammeCard";
 import { DnaHelixBackground } from "@/components/DnaHelixBackground";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
-import { programmes, targets, targetPartners } from "@/lib/site";
+import { programmes, targets, targetPartners, site } from "@/lib/site";
 import { getContentMap } from "@/lib/content";
 import { contentRegistry } from "@/lib/content-registry";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: { absolute: `${site.name} | ${site.tagline}` },
+  description: site.mission,
+  keywords: [...site.keywords],
+  alternates: { canonical: "/" },
+};
 
 const pillarIcons = [ShieldCheck, BookOpenCheck, HeartHandshake];
 

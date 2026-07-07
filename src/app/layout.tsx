@@ -22,8 +22,15 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.mission,
+  keywords: [...site.keywords],
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
-    title: site.name,
+    title: `${site.name} | ${site.tagline}`,
     description: site.mission,
     url: `https://${site.domain}`,
     siteName: site.name,
@@ -35,6 +42,21 @@ export const metadata: Metadata = {
     title: site.name,
     description: site.mission,
   },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  alternateName: site.shortName,
+  url: `https://${site.domain}`,
+  logo: `https://${site.domain}/icon.svg`,
+  description: site.mission,
+  email: site.emails.info,
+  foundingDate: site.incorporatedDate,
+  legalName: site.name,
+  identifier: site.companyNumber,
+  sameAs: [site.aiPlatformUrl],
 };
 
 export default function RootLayout({
@@ -49,6 +71,10 @@ export default function RootLayout({
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
         </ThemeProvider>

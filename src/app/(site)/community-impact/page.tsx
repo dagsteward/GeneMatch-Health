@@ -15,6 +15,14 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Community Impact",
   description: `${site.name}'s community impact goals and proposed pilot programme — honest, forward-looking targets, not fabricated results.`,
+  keywords: [
+    "GeneMatch Health community impact",
+    "health inequality pilot programme UK",
+    "Greater Manchester health pilot",
+    "community health intelligence programme",
+    ...site.keywords,
+  ],
+  alternates: { canonical: "/community-impact" },
 };
 
 const yearTargets = [targets.year1, targets.year3, targets.year5];

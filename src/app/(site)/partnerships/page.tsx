@@ -19,6 +19,14 @@ function defaultsFor(prefix: string) {
 export const metadata: Metadata = {
   title: "Partnerships",
   description: `Become a founding partner of ${site.name} — NHS, local authorities, universities, corporate and charity partners welcome.`,
+  keywords: [
+    "partner with GeneMatch Health",
+    "NHS partnership opportunities",
+    "university health research partnership UK",
+    "corporate health CSR partnership",
+    ...site.keywords,
+  ],
+  alternates: { canonical: "/partnerships" },
 };
 
 const benefitIcons = [Award, Rocket, FlaskConical, ShieldCheck];

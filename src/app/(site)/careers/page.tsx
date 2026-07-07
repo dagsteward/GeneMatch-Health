@@ -11,6 +11,14 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Careers & Volunteering",
   description: `Join ${site.name} as a founding volunteer or be first to hear about roles as we grow.`,
+  keywords: [
+    "GeneMatch Health careers",
+    "health CIC volunteering UK",
+    "community interest company jobs",
+    "health charity volunteer opportunities",
+    ...site.keywords,
+  ],
+  alternates: { canonical: "/careers" },
 };
 
 function defaultsFor(prefix: string) {

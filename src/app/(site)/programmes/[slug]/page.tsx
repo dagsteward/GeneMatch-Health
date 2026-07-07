@@ -12,7 +12,7 @@ import {
 import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { GlassCard } from "@/components/GlassCard";
-import { programmes } from "@/lib/site";
+import { programmes, site } from "@/lib/site";
 import { getContentMap } from "@/lib/content";
 import { contentRegistry } from "@/lib/content-registry";
 
@@ -46,6 +46,13 @@ export async function generateMetadata({
   return {
     title: programme.name,
     description: programme.shortDescription,
+    keywords: [
+      programme.name,
+      `${programme.name} programme`,
+      ...programme.features.map((f) => f.title),
+      ...site.keywords,
+    ],
+    alternates: { canonical: `/programmes/${programme.slug}` },
   };
 }
 

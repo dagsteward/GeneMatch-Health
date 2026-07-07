@@ -12,6 +12,8 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Contact",
   description: `Get in touch with ${site.name}.`,
+  keywords: ["contact GeneMatch Health", "GeneMatch Health CIC enquiries", ...site.keywords],
+  alternates: { canonical: "/contact" },
 };
 
 const departments = [

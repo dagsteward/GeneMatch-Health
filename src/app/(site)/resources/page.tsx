@@ -8,6 +8,8 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Resources",
   description: `Research publications and health literacy resources from ${site.name} — coming as our research programme produces them.`,
+  keywords: ["GeneMatch Health resources", "health literacy resources UK", ...site.keywords],
+  alternates: { canonical: "/resources" },
 };
 
 export default function ResourcesPage() {

@@ -13,6 +13,14 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "About Us",
   description: `${site.mission} Learn about ${site.name}'s mission, vision, values and founding team.`,
+  keywords: [
+    "GeneMatch Health CIC about",
+    "community interest company mission",
+    "health equity organisation UK",
+    "genomic health literacy nonprofit",
+    ...site.keywords,
+  ],
+  alternates: { canonical: "/about" },
 };
 
 function defaultsFor(prefix: string) {

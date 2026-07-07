@@ -13,6 +13,8 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "News",
   description: `News and updates from ${site.name}.`,
+  keywords: ["GeneMatch Health news", "GeneMatch Health CIC updates", ...site.keywords],
+  alternates: { canonical: "/news" },
 };
 
 export default async function NewsPage() {

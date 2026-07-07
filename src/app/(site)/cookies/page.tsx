@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Cookies" };
+export const metadata: Metadata = {
+  title: "Cookies",
+  description: `How ${site.name} uses cookies on this website.`,
+  alternates: { canonical: "/cookies" },
+};
 
 export default function CookiesPage() {
   return (

@@ -26,6 +26,19 @@ export const site = {
     grants: "grants@genematchhealth.org",
     careers: "careers@genematchhealth.org",
   },
+  keywords: [
+    "GeneMatch Health",
+    "GeneMatch Health CIC",
+    "community interest company health",
+    "genomic health literacy",
+    "preventive health technology",
+    "family health history tool",
+    "health risk awareness AI",
+    "fertility education UK",
+    "health equity community interest company",
+    "NHS health innovation partnership",
+    "AI health education platform",
+  ],
 } as const;
 
 export const founder = {

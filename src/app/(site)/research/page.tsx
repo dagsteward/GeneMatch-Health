@@ -14,6 +14,14 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Research & Innovation",
   description: `${site.name}'s research strategy, clinical assurance commitments and academic partnership goals.`,
+  keywords: [
+    "GeneMatch Health research",
+    "health research innovation UK",
+    "clinical safety NHS DCB0129",
+    "academic health partnership research",
+    ...site.keywords,
+  ],
+  alternates: { canonical: "/research" },
 };
 
 function defaultsFor(prefix: string) {

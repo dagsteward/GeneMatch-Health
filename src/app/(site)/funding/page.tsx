@@ -19,6 +19,14 @@ function defaultsFor(prefix: string) {
 export const metadata: Metadata = {
   title: "Funding & Support",
   description: `How organisations can fund and support ${site.name} — corporate partnerships, research grants, sponsorship and volunteering.`,
+  keywords: [
+    "fund GeneMatch Health",
+    "health research grants UK",
+    "CIC sponsorship opportunities",
+    "Innovate UK health funding",
+    ...site.keywords,
+  ],
+  alternates: { canonical: "/funding" },
 };
 
 export default async function FundingPage() {
