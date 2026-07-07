@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
+import { sendFormNotification } from "@/lib/mailer";
+import { site } from "@/lib/site";
 
-// NOTE: No transactional email / mailing-list provider (e.g. Resend, Mailchimp,
-// SendGrid) is configured yet. This route validates input and logs the
-// submission so nothing is silently lost, but it does not actually send email
-// or add the address to a list. Wire up a real provider + API key before launch.
+// NOTE: no mailing-list provider (e.g. Mailchimp) is configured — signups are
+// not added to any list yet. This does notify info@ by email so a real person
+// sees each signup, but building an actual mailing list needs a provider.
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
   const email = typeof body?.email === "string" ? body.email.trim() : "";
@@ -12,7 +13,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "A valid email address is required." }, { status: 400 });
   }
 
-  console.log("[newsletter] signup received (no provider configured):", email);
+  try {
+    await sendFormNotification({
+      to: site.emails.info,
+      subject: "New newsletter signup",
+      fields: { email },
+      replyTo: email,
+    });
+  } catch (err) {
+    console.error("[newsletter] failed to send notification:", (err as Error).message);
+  }
 
   return NextResponse.json({ ok: true });
 }
