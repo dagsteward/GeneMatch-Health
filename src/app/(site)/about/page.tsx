@@ -27,7 +27,7 @@ export default async function AboutPage() {
 
   return (
     <>
-      <Section className="bg-card">
+      <Section className="bg-card" withHelix>
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
           <Reveal>
             <Eyebrow>About Us</Eyebrow>

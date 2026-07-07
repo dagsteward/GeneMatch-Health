@@ -19,7 +19,7 @@ export default async function NewsPage() {
   const posts = await listPublishedPosts();
 
   return (
-    <Section className="bg-card">
+    <Section className="bg-card" withHelix>
       <Reveal>
         <Eyebrow>News</Eyebrow>
         <h1 className="mb-10 font-heading text-3xl font-semibold text-primary md:text-5xl">

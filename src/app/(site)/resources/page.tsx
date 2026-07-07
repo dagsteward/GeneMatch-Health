@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   return (
-    <Section className="bg-card">
+    <Section className="bg-card" withHelix>
       <Reveal>
         <Eyebrow>Resources</Eyebrow>
         <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">

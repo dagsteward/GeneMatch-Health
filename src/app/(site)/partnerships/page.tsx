@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Award, Building2, FlaskConical, Hospital, Landmark, HeartHandshake, Rocket, ShieldCheck } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { DnaHelixBackground } from "@/components/DnaHelixBackground";
 import { PartnershipForm } from "@/components/forms/PartnershipForm";
 import { site } from "@/lib/site";
 import { getContentMap } from "@/lib/content";
@@ -54,8 +55,9 @@ export default async function PartnershipsPage() {
 
   return (
     <>
-      <section className="bg-brand py-24 text-center text-brand-foreground">
-        <div className="mx-auto max-w-3xl px-6">
+      <section className="relative overflow-hidden bg-brand py-24 text-center text-brand-foreground">
+        <DnaHelixBackground opacity={0.15} />
+        <div className="relative z-10 mx-auto max-w-3xl px-6">
           <Reveal>
             <h1 className="mb-6 font-heading text-3xl font-semibold md:text-5xl">
               {content["partnerships.hero.heading"]}

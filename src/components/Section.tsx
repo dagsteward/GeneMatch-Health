@@ -1,16 +1,29 @@
 import { cn } from "@/lib/utils";
+import { DnaHelixBackground } from "@/components/DnaHelixBackground";
 
 type SectionProps = {
   children: React.ReactNode;
   className?: string;
   containerClassName?: string;
   id?: string;
+  /** Render the animated DNA helix behind this section's content, matching the Home hero. */
+  withHelix?: boolean;
 };
 
-export function Section({ children, className, containerClassName, id }: SectionProps) {
+export function Section({ children, className, containerClassName, id, withHelix }: SectionProps) {
   return (
-    <section id={id} className={cn("py-16 md:py-24", className)}>
-      <div className={cn("mx-auto max-w-[1280px] px-6 md:px-10", containerClassName)}>
+    <section
+      id={id}
+      className={cn("py-16 md:py-24", withHelix && "relative overflow-hidden", className)}
+    >
+      {withHelix && <DnaHelixBackground opacity={0.15} />}
+      <div
+        className={cn(
+          "mx-auto max-w-[1280px] px-6 md:px-10",
+          withHelix && "relative z-10",
+          containerClassName
+        )}
+      >
         {children}
       </div>
     </section>

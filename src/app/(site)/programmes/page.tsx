@@ -19,7 +19,7 @@ export default async function ProgrammesPage() {
 
   return (
     <>
-      <Section className="bg-card">
+      <Section className="bg-card" withHelix>
         <Reveal>
           <Eyebrow>Our Programmes</Eyebrow>
           <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">

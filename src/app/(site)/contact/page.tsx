@@ -26,7 +26,7 @@ export default async function ContactPage() {
   const intro = await getContent(introField.key, introField.default);
 
   return (
-    <Section className="bg-card">
+    <Section className="bg-card" withHelix>
       <Reveal>
         <Eyebrow>Contact</Eyebrow>
         <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">

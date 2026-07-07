@@ -73,7 +73,7 @@ export default async function ProgrammeDetailPage({
 
   return (
     <>
-      <Section className="bg-card">
+      <Section className="bg-card" withHelix>
         <div className={programme.image ? "grid grid-cols-1 items-center gap-10 lg:grid-cols-2" : ""}>
           <Reveal>
             <Eyebrow>{programme.platformUrl ? "Flagship Programme · Live" : "Flagship Programme"}</Eyebrow>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ExternalLink, Menu, X } from "lucide-react";
+import { ExternalLink, Menu, Sparkles, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { nav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -66,6 +66,15 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-1 md:hidden">
+          <a
+            href={site.aiPlatformUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Launch GeneMatch AI"
+            className="flex h-11 w-11 items-center justify-center text-secondary"
+          >
+            <Sparkles className="h-5 w-5" aria-hidden="true" />
+          </a>
           <ThemeToggle />
           <button
             type="button"
@@ -79,11 +88,20 @@ export function Header() {
         </div>
       </nav>
 
+      {open && (
+        <button
+          aria-label="Close menu overlay"
+          className="fixed inset-0 z-40 bg-black/40 md:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
       <div
         className={cn(
           "fixed inset-y-0 left-0 z-[60] flex h-full w-72 max-w-[85vw] flex-col overflow-y-auto rounded-r-2xl bg-sidebar shadow-xl transition-transform duration-300 ease-in-out md:hidden",
           open ? "translate-x-0" : "-translate-x-full"
         )}
+        aria-hidden={!open}
       >
         <div className="p-6 text-white">
           <div className="mb-8 font-heading text-lg font-semibold">GeneMatch Navigation</div>
@@ -93,6 +111,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
+                tabIndex={open ? 0 : -1}
                 className="block rounded-full px-4 py-3.5 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
               >
                 {item.label}
@@ -103,6 +122,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
+              tabIndex={open ? 0 : -1}
               className="mt-4 flex items-center justify-center gap-1.5 rounded-full border-2 border-white/30 px-4 py-3.5 text-center font-semibold text-white"
             >
               Launch GeneMatch AI <ExternalLink className="h-4 w-4" aria-hidden="true" />
@@ -110,6 +130,7 @@ export function Header() {
             <Link
               href="/partnerships"
               onClick={() => setOpen(false)}
+              tabIndex={open ? 0 : -1}
               className="mt-2 block rounded-full bg-secondary px-4 py-3.5 text-center font-semibold text-secondary-foreground"
             >
               Partner With Us
@@ -117,14 +138,6 @@ export function Header() {
           </div>
         </div>
       </div>
-
-      {open && (
-        <button
-          aria-label="Close menu overlay"
-          className="fixed inset-0 z-50 bg-black/40 md:hidden"
-          onClick={() => setOpen(false)}
-        />
-      )}
     </header>
   );
 }
