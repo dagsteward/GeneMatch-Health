@@ -75,11 +75,12 @@ export const contentRegistry: RegistryField[] = [
 
   // --- Community Impact ---
   { key: "community-impact.hero.intro", label: "Hero intro", page: "Community Impact", type: "richtext", default: `${site.name} was founded in ${site.founded}. We don't have a track record to report yet — what follows are the honest, forward-looking targets guiding our roadmap, not results we've already achieved.` },
-  { key: "community-impact.hero.image", label: "Hero photo", page: "Community Impact", type: "image", default: "/images/community-workshop.jpg" },
+  { key: "community-impact.hero.image", label: "Volunteers banner photo", page: "Community Impact", type: "image", default: "/images/volunteers-impact.png" },
   { key: "community-impact.measure.intro", label: "\"How we'll measure impact\" text", page: "Community Impact", type: "richtext", default: "As GeneMatch AI™ and our other programmes reach real people, we'll report genuine figures here — platform users, workshops delivered, community beneficiaries, partnerships established and research outputs." },
 
   // --- Careers ---
   { key: "careers.hero.intro", label: "Hero intro", page: "Careers", type: "richtext", default: `${site.name} is a newly founded organisation — we don't have paid roles open yet, but we're building a founding community of volunteers who want to shape what comes next. Register your interest and we'll be in touch as opportunities open up.` },
+  { key: "careers.hero.image", label: "Volunteers banner photo", page: "Careers", type: "image", default: "/images/volunteers-impact.png" },
   { key: "careers.volunteerAreas", label: "Volunteer areas", page: "Careers", type: "json", default: json([
     { title: "Community Outreach", description: "Help us connect with community groups, faith organisations and health fairs." },
     { title: "Health Education", description: "Support the design and delivery of our first GeneMatch Education™ workshops." },

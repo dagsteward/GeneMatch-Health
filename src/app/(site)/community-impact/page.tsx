@@ -39,29 +39,34 @@ export default async function CommunityImpactPage() {
   return (
     <>
       <Section className="bg-card" withHelix>
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-          <Reveal>
-            <Eyebrow>Community Impact</Eyebrow>
-            <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
-              Where We&apos;re Headed
-            </h1>
-            <p className="max-w-3xl text-lg text-muted-foreground">
-              {content["community-impact.hero.intro"]}
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl">
-              <Image
-                src={content["community-impact.hero.image"]}
-                alt="A group of people in an engaged community discussion"
-                fill
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                className="object-cover"
-                unoptimized
-              />
-            </div>
-          </Reveal>
-        </div>
+        <Reveal>
+          <Eyebrow>Community Impact</Eyebrow>
+          <h1 className="mb-6 font-heading text-3xl font-semibold text-primary md:text-5xl">
+            Where We&apos;re Headed
+          </h1>
+          <p className="max-w-3xl text-lg text-muted-foreground">
+            {content["community-impact.hero.intro"]}
+          </p>
+        </Reveal>
+      </Section>
+
+      <Section className="bg-card pt-0">
+        <Reveal>
+          <Link
+            href="/careers#volunteer-form"
+            aria-label="Visit the Careers & Volunteering page to volunteer with us"
+            className="group relative block overflow-hidden rounded-3xl shadow-xl"
+          >
+            <Image
+              src={content["community-impact.hero.image"]}
+              alt="GeneMatch Health CIC volunteers in matching t-shirts packing food donation boxes at a community outreach event"
+              width={1717}
+              height={916}
+              className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+              unoptimized
+            />
+          </Link>
+        </Reveal>
       </Section>
 
       <Section className="bg-brand text-brand-foreground">

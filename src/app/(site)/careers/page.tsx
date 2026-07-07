@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { VolunteerForm } from "@/components/forms/VolunteerForm";
@@ -48,7 +50,26 @@ export default async function CareersPage() {
         </Reveal>
       </Section>
 
-      <Section className="bg-muted/40">
+      <Section className="bg-card pt-0">
+        <Reveal>
+          <Link
+            href="#volunteer-form"
+            aria-label="Jump to the volunteer sign-up form"
+            className="group relative block overflow-hidden rounded-3xl shadow-xl"
+          >
+            <Image
+              src={content["careers.hero.image"]}
+              alt="GeneMatch Health CIC volunteers in matching t-shirts packing food donation boxes at a community outreach event"
+              width={1717}
+              height={916}
+              className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+              unoptimized
+            />
+          </Link>
+        </Reveal>
+      </Section>
+
+      <Section id="volunteer-form" className="bg-muted/40">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div className="space-y-6">
             {volunteerAreas.map((area, i) => (
