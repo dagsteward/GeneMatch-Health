@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck, HeartHandshake, ShieldCheck } from "lucide-react";
 import { Section, Eyebrow } from "@/components/Section";
@@ -32,9 +33,9 @@ export default function Home() {
   return (
     <>
       <section className="relative flex min-h-[85vh] items-center overflow-hidden bg-background">
-        <DnaHelixBackground opacity={0.35} />
-        <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-6 py-20 md:px-10 lg:grid-cols-12">
-          <div className="lg:col-span-8">
+        <DnaHelixBackground opacity={0.2} />
+        <div className="relative z-10 mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 px-6 py-20 md:px-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
             <Eyebrow>Founded 2026 · Community Interest Company</Eyebrow>
             <h1 className="mb-6 max-w-3xl font-heading text-4xl font-semibold leading-tight text-primary md:text-6xl">
               {site.tagline}
@@ -54,6 +55,20 @@ export default function Home() {
                 Partner With Us
               </Link>
             </div>
+          </div>
+          <div className="lg:col-span-5">
+            <Reveal>
+              <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl shadow-2xl">
+                <Image
+                  src="/images/family-hero.png"
+                  alt="A multiracial family smiling together"
+                  fill
+                  sizes="(min-width: 1024px) 35vw, 90vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
