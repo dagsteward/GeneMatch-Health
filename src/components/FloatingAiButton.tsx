@@ -11,10 +11,11 @@ export function FloatingAiButton() {
       href={site.aiPlatformUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group fixed bottom-6 right-6 z-40 hidden items-center gap-2 rounded-full bg-primary py-3 pl-4 pr-5 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:shadow-xl active:scale-95 lg:flex"
+      aria-label="Try GeneMatch AI"
+      className="group fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground shadow-lg transition-all hover:shadow-xl active:scale-95 lg:bottom-6 lg:right-6 lg:h-auto lg:w-auto lg:py-3 lg:pl-4 lg:pr-5"
     >
-      <Sparkles className="h-4 w-4 text-accent" aria-hidden="true" />
-      <span>Try GeneMatch AI</span>
+      <Sparkles className="h-5 w-5 text-accent lg:h-4 lg:w-4" aria-hidden="true" />
+      <span className="hidden text-sm font-semibold lg:inline">Try GeneMatch AI</span>
     </a>
   );
 }

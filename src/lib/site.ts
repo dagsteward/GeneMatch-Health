@@ -383,6 +383,7 @@ export const revenueModel = [
 ];
 
 export const nav = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/programmes", label: "Programmes" },
   { href: "/research", label: "Research" },
