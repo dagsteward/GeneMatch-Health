@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { FloatingAiButton } from "@/components/FloatingAiButton";
 import { site } from "@/lib/site";
 
 const poppins = Poppins({
@@ -53,10 +50,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col font-sans">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Header />
-          <main className="flex-1 pt-20">{children}</main>
-          <Footer />
-          <FloatingAiButton />
+          {children}
         </ThemeProvider>
       </body>
     </html>
